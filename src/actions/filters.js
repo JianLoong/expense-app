@@ -3,7 +3,7 @@ export const setTextFilter = (text = "") => ({
   text
 });
 
-export const sortByAmount = (amount = "") => ({
+export const sortByAmount = (amount) => ({
   type: "SORT_BY_AMOUNT",
   amount
 });
