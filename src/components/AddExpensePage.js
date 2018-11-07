@@ -9,7 +9,7 @@ const AddExpensePage = props => (
       onSubmit={expense => {
         props.dispatch(addExpense(expense));
         //Browser routing with push
-        props.history.push('/');
+        props.history.push("/");
       }}
     />
     <p>This is for the add expense page.</p>

@@ -1,7 +1,9 @@
 import { v1 as uuid } from "uuid";
 
+// EDIT_EXPENSE
 export const editExpense = (id, updates) => ({
-  type: "EDIT_EXEPENSE",
+  type: 'EDIT_EXPENSE',
+  id,
   updates
 });
 

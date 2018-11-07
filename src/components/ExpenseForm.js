@@ -10,14 +10,17 @@ const now = moment();
 console.log(now.format("Do MMM, YYYY"));
 
 export default class ExpenseForm extends React.Component {
-  state = {
-    description: "",
-    note: "",
-    amount: "",
-    createdAt: moment(),
-    calendarFocused: false,
-    error: ""
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      description: props.expense ? props.expense.description : "",
+      note: props.expense ? props.expense.note : "",
+      amount: props.expense ? (props.expense.amount / 100).toString() : "",
+      createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
+      calendarFocused: false,
+      error: ""
+    };
+  }
 
   onDescriptionChange = e => {
     const description = e.target.value;
@@ -38,9 +41,7 @@ export default class ExpenseForm extends React.Component {
 
   onDateChange = createdAt => {
     if (createdAt) {
-      this.setState(() => {
-        createdAt;
-      });
+      this.setState(() => ({ createdAt }));
     }
   };
 
@@ -59,8 +60,6 @@ export default class ExpenseForm extends React.Component {
       this.setState(() => ({
         error: ""
       }));
-      //Clear error
-      console.log("Test");
       this.props.onSubmit({
         description: this.state.description,
         amount: parseFloat(this.state.amount, 10) * 100,
@@ -91,6 +90,7 @@ export default class ExpenseForm extends React.Component {
           />
 
           <SingleDatePicker
+            displayFormat="DD MMM YYYY"
             date={this.state.createdAt} // momentPropTypes.momentObj or null
             onDateChange={this.onDateChange} // PropTypes.func.isRequired
             focused={this.state.calendarFocused} // PropTypes.bool
