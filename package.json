@@ -3,11 +3,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "Jian Liew",
+  "homepage": "https://jianloong.github.io/expense-app",
   "license": "MIT",
   "scripts": {
     "serve": "live-server public/",
-    "build": "webpack",
-    "dev-server": "webpack-dev-server"
+    "build:dev": "webpack",
+    "build:prod": "webpack -p --env production",
+    "dev-server": "webpack-dev-server",
+    "predeploy": "yarn run build:prod",
+    "deploy": "gh-pages -b gh-pages -d public",
+    "test": "jest"
   },
   "dependencies": {
     "babel-cli": "6.24.1",
@@ -18,6 +23,8 @@
     "babel-preset-env": "1.5.2",
     "babel-preset-react": "6.24.1",
     "css-loader": "0.28.4",
+    "extract-text-webpack-plugin": "3.0.0",
+    "jest": "20.0.4",
     "live-server": "^1.2.0",
     "moment": "^2.22.2",
     "node-sass": "4.5.3",
