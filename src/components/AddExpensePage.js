@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { addExpense } from "../actions/expenses";
 
 const AddExpensePage = props => (
-  <div>
+  <div className="container">
     <ExpenseForm
       onSubmit={expense => {
         props.dispatch(addExpense(expense));
@@ -12,7 +12,6 @@ const AddExpensePage = props => (
         props.history.push("/");
       }}
     />
-    <p>This is for the add expense page.</p>
   </div>
 );
 

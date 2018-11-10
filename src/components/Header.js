@@ -3,16 +3,31 @@ import React from "react";
 
 const Header = () => (
   <div>
-    <h1>Expense App</h1>
-    <NavLink to="/" activeClassName="is-active" exact={true}>
-      Dashboard
-    </NavLink>
-    <NavLink to="/create" activeClassName="is-active">
-      Create
-    </NavLink>
-    <NavLink to="/help" activeClassName="is-active">
-      Help
-    </NavLink>
+    <div className="container">
+      <NavLink
+        to="/"
+        className="btn btn-primary"
+        activeClassName="is-active"
+        exact={true}
+      >
+        Dashboard
+      </NavLink>
+      <NavLink
+        className="btn btn-primary"
+        to="/create"
+        activeClassName="is-active"
+      >
+        Create
+      </NavLink>
+      <NavLink
+        className="btn btn-primary"
+        to="/help"
+        activeClassName="is-active"
+      >
+        Help
+      </NavLink>
+    </div>
+    <br />
   </div>
 );
 

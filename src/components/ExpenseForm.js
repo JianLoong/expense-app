@@ -5,10 +5,6 @@ import "react-dates/lib/css/_datepicker.css";
 // This import needed to fix LTR issue
 import "react-dates/initialize";
 
-const now = moment();
-
-console.log(now.format("Do MMM, YYYY"));
-
 export default class ExpenseForm extends React.Component {
   constructor(props) {
     super(props);
@@ -29,6 +25,7 @@ export default class ExpenseForm extends React.Component {
 
   onNoteChange = e => {
     const note = e.target.value;
+    console.log(note);
     this.setState(() => ({ note }));
   };
 
@@ -40,6 +37,7 @@ export default class ExpenseForm extends React.Component {
   };
 
   onDateChange = createdAt => {
+    console.log(createdAt);
     if (createdAt) {
       this.setState(() => ({ createdAt }));
     }
@@ -50,6 +48,7 @@ export default class ExpenseForm extends React.Component {
   };
 
   onSubmit = e => {
+    console.log(e);
     e.preventDefault();
     if (!this.state.description || !this.state.amount) {
       //Error message
@@ -71,42 +70,63 @@ export default class ExpenseForm extends React.Component {
 
   render() {
     return (
-      <div>
-        {this.state.error && <p>{this.state.error}</p>}
+      <div className="col-md-12">
+        <div>
+          {this.state.error && (
+            <div className="alert alert-warning">{this.state.error}</div>
+          )}
+        </div>
         <form onSubmit={this.onSubmit}>
           <h3>Add Expense</h3>
-          <input
-            type="text"
-            placeholder="description"
-            value={this.state.description}
-            autoFocus
-            onChange={this.onDescriptionChange}
-          />
-          <input
-            type="text"
-            value={this.state.amount}
-            onChange={this.onAmountChange}
-            placeholder="amount"
-          />
+          <div className="form-group">
+            <label htmlFor="descriptionInput">Description</label>
+            <input
+              className="form-control"
+              type="text"
+              placeholder="Description"
+              value={this.state.description}
+              autoFocus
+              onChange={this.onDescriptionChange}
+            />
+            <small>This will appear on your statement</small>
+          </div>
+          <div className="form-group">
+            <label htmlFor="descriptionInput">Amount</label>
+            <input
+              type="text"
+              className="form-control"
+              value={this.state.amount}
+              onChange={this.onAmountChange}
+              placeholder="Amount"
+            />
+          </div>
 
-          <SingleDatePicker
-            displayFormat="DD MMM YYYY"
-            date={this.state.createdAt} // momentPropTypes.momentObj or null
-            onDateChange={this.onDateChange} // PropTypes.func.isRequired
-            focused={this.state.calendarFocused} // PropTypes.bool
-            onFocusChange={this.onFocusChange} // PropTypes.func.isRequired
-            numberOfMonths={1}
-            isOutsideRange={day => false} //Everyday is OK
-            id="your_unique_id" // PropTypes.string.isRequired,
-          />
+          <div className="form-group">
+            <label htmlFor="descriptionInput">Date</label>
+            <br />
+            <SingleDatePicker
+              displayFormat="DD MMM YYYY"
+              date={this.state.createdAt} // momentPropTypes.momentObj or null
+              onDateChange={this.onDateChange} // PropTypes.func.isRequired
+              focused={this.state.calendarFocused} // PropTypes.bool
+              onFocusChange={this.onFocusChange} // PropTypes.func.isRequired
+              numberOfMonths={1}
+              isOutsideRange={day => false} //Everyday is OK
+              id="your_unique_id" // PropTypes.string.isRequired,
+            />
+          </div>
 
-          <textarea
-            value={this.state.note}
-            placeholder="Add a note (optional)"
-            onChange={this.onNoteChange}
-          />
+          <div className="form-group">
+            <label htmlFor="descriptionInput">Note</label>
+            <textarea
+              className="form-control"
+              value={this.state.note}
+              placeholder="Add a note (optional)"
+              onChange={this.onNoteChange}
+            />
+          </div>
 
-          <button>Add Expense</button>
+          <button className="btn btn-primary">Add Expense</button>
         </form>
       </div>
     );

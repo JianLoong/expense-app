@@ -8,7 +8,6 @@ const EditExpensePage = props => {
   console.log(props);
   return (
     <div>
-      <p>This is for the edit expense page.</p>
       <p>Editing {props.match.params.id}</p>
       <ExpenseForm
         expense={props.expense}
