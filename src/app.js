@@ -9,20 +9,17 @@ import getVisibleExpenses from "./selectors/expenses";
 import "normalize.css/normalize.css";
 import "./styles/styles.scss";
 import 'bootstrap';
+import moment from "moment";
 
 const store = configureStore();
 
-store.dispatch(addExpense({ description: "Water Bill", amount: 2000, createdAt: 1541903938000 }));
+store.dispatch(addExpense({ description: "Water Bill", amount: 21400, createdAt: moment() }));
 
 store.dispatch(addExpense({ description: "Rent", amount: 20000, createdAt: 1541903938000 }));
 
-store.dispatch(addExpense({ description: "Gas Bill", createdAt: 1541903938000 }));
+store.dispatch(addExpense({ description: "Gas Bill", amount: 13200, createdAt: 1541903938000 }));
 
 store.dispatch(setTextFilter(""));
-
-// setTimeout(() => {
-//   store.dispatch(setTextFilter("bill"));
-// }, 3000);
 
 console.log(store.getState());
 

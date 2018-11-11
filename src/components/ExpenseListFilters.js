@@ -74,6 +74,7 @@ class ExpenseListFilters extends React.Component {
             numberOfMonths={1}
             isOutsideRange={() => false}
             showClearDates={true}
+            readOnly={true}
           />
         </div>
       </div>

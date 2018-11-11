@@ -5,7 +5,7 @@ import ExpenseSummary from "./ExpenseSummary";
 const Header = () => (
   <div>
     <div className="container">
-      <div className="jumbotron">
+      <div className="">
         <h1 className="display-3">Expensify</h1>
 
         <hr className="my-4" />
