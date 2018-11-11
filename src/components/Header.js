@@ -19,13 +19,6 @@ const Header = () => (
       >
         Create
       </NavLink>
-      <NavLink
-        className="btn btn-primary"
-        to="/help"
-        activeClassName="is-active"
-      >
-        Help
-      </NavLink>
     </div>
     <br />
   </div>

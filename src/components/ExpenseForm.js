@@ -70,14 +70,13 @@ export default class ExpenseForm extends React.Component {
 
   render() {
     return (
-      <div className="col-md-12">
+      <div className="">
         <div>
           {this.state.error && (
             <div className="alert alert-warning">{this.state.error}</div>
           )}
         </div>
         <form onSubmit={this.onSubmit}>
-          <h3>Add Expense</h3>
           <div className="form-group">
             <label htmlFor="descriptionInput">Description</label>
             <input

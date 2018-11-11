@@ -3,7 +3,7 @@ import ExpenseList from "./ExpenseList";
 import ExpenseListFilters from "./ExpenseListFilters";
 
 const ExpenseDashboardPage = props => (
-  <div className="container">
+  <div className="">
     <ExpenseListFilters />
     <ExpenseList />
   </div>
