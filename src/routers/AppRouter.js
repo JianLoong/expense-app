@@ -10,7 +10,7 @@ import EditExpensePage from "../components/EditExpensePage";
 const AppRouter = () => {
   console.log();
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/expense-app">
       <div>
         <Header />
         <div className="container">

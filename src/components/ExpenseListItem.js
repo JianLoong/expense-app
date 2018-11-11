@@ -4,7 +4,7 @@ import moment from "moment";
 import numeral from "numeral";
 
 const ExpenseListItem = ({ id, description, amount, createdAt }) => (
-  <div className="card border-primary">
+  <div className="card mb-3 bg-light">
     {console.log(createdAt)}
     <Link
       className="card-header" 
@@ -13,8 +13,8 @@ const ExpenseListItem = ({ id, description, amount, createdAt }) => (
     </Link>
     <p className="card-body">
       {numeral(amount / 100).format('$0,0.00')}
-      -
-      {moment(createdAt).format('MMMM Do, YYYY')}
+      {` on `} 
+      <strong>{moment(createdAt).format('MMMM Do, YYYY')}</strong>
     </p>
   </div>
 );

@@ -29,12 +29,12 @@ class ExpenseListFilters extends React.Component {
   render() {
     return (
       <div className="col-md-12">
-        <h3>Search for expenses</h3>
         <div className="form-group">
           <label htmlFor="descriptionInput">Description</label>
           <input
             className="form-control"
             type="text"
+            placeholder="Enter search query"
             value={this.props.filters.text}
             onChange={e => {
               this.props.dispatch(setTextFilter(e.target.value));
