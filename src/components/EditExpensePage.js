@@ -7,8 +7,7 @@ import { removeExpense } from "../actions/expenses";
 const EditExpensePage = props => {
   console.log(props);
   return (
-    <div>
-      <p>Editing {props.match.params.id}</p>
+    <div className="container">
       <ExpenseForm
         expense={props.expense}
         onSubmit={expense => {
@@ -17,14 +16,7 @@ const EditExpensePage = props => {
           props.history.push("/");
         }}
       />
-      <button
-        onClick={() => {
-          props.dispatch(removeExpense({ id: props.expense.id }));
-          props.history.push("/");
-        }}
-      >
-        Remove
-      </button>
+
     </div>
   );
 };

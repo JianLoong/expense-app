@@ -126,7 +126,7 @@ export default class ExpenseForm extends React.Component {
             />
           </div>
 
-          <button className="btn btn-primary">Add Expense</button>
+          <button className="btn btn-primary">Confirm</button>
         </form>
       </div>
     );

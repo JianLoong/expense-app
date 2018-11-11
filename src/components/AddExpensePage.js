@@ -12,6 +12,8 @@ const AddExpensePage = props => (
         props.history.push("/");
       }}
     />
+
+    
   </div>
 );
 

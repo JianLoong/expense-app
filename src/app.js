@@ -12,11 +12,11 @@ import 'bootstrap';
 
 const store = configureStore();
 
-store.dispatch(addExpense({ description: "Water Bill", amount: 2000, createdAt: 1 }));
+store.dispatch(addExpense({ description: "Water Bill", amount: 2000, createdAt: 1541903938000 }));
 
-store.dispatch(addExpense({ description: "Rent", amount: 20000, createdAt: 2 }));
+store.dispatch(addExpense({ description: "Rent", amount: 20000, createdAt: 1541903938000 }));
 
-store.dispatch(addExpense({ description: "Gas Bill", createdAt: 3 }));
+store.dispatch(addExpense({ description: "Gas Bill", createdAt: 1541903938000 }));
 
 store.dispatch(setTextFilter(""));
 

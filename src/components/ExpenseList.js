@@ -4,10 +4,10 @@ import ExpenseListItem from "./ExpenseListItem";
 import selectedExpenses from "../selectors/expenses";
 
 const ExpenseList = props => (
-  <div className="container card border-primary">
-    <h3 className="card-header">Expense List</h3>
-    <div className="card-body">
-    {!props.expense && <p>No expenses</p>}
+  <div className="container">
+    <h3 className="">Expense List</h3>
+    <div className="">
+    {props.expenses.length === 0 && <p className="alert alert-warning">No expenses found.</p>}
     {props.expenses.map(expense => {
       return <ExpenseListItem key={expense.id} {...expense} />;
     })}
