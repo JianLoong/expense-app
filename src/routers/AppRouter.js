@@ -10,16 +10,18 @@ import EditExpensePage from "../components/EditExpensePage";
 const AppRouter = () => {
   console.log();
   return (
-    <BrowserRouter basename={"/expense-app"}>
+    <BrowserRouter basename="/expense-app">
       <div>
         <Header />
-        <Switch>
-          <Route path="/" component={ExpenseDashboardPage} exact={true} />
-          <Route path="/create" component={AddExpensePage} />
-          <Route path="/edit/:id" component={EditExpensePage} />
-          <Route path="/help" component={HelpPage} />
-          <Route component={NotFoundPage} />
-        </Switch>
+        <div className="container">
+          <Switch>
+            <Route path="/" component={ExpenseDashboardPage} exact={true} />
+            <Route path="/create" component={AddExpensePage} />
+            <Route path="/edit/:id" component={EditExpensePage} />
+            <Route path="/help" component={HelpPage} />
+            <Route component={NotFoundPage} />
+          </Switch>
+        </div>
       </div>
     </BrowserRouter>
   );

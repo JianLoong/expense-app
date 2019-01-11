@@ -1,18 +1,35 @@
 import { NavLink, Link, Switch, BrowserRouter, Route } from "react-router-dom";
 import React from "react";
+import ExpenseSummary from "./ExpenseSummary";
 
 const Header = () => (
   <div>
-    <h1>Expense App</h1>
-    <NavLink to="/" activeClassName="is-active" exact={true}>
-      Dashboard
-    </NavLink>
-    <NavLink to="/create" activeClassName="is-active">
-      Create
-    </NavLink>
-    <NavLink to="/help" activeClassName="is-active">
-      Help
-    </NavLink>
+    <div className="container">
+      <div className="">
+        <h1 className="display-3">Expensify</h1>
+
+        <hr className="my-4" />
+        <p className="lead">
+          <NavLink
+            to="/"
+            className="btn btn-primary"
+            activeClassName="is-active"
+            exact={true}
+          >
+            Dashboard
+          </NavLink>
+          &nbsp;
+          <NavLink
+            className="btn btn-primary lg"
+            to="/create"
+            activeClassName="is-active"
+          >
+            Create an expense
+          </NavLink>
+        </p>
+      </div>
+    </div>
+    <br />
   </div>
 );
 

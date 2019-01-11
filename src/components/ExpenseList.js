@@ -4,11 +4,14 @@ import ExpenseListItem from "./ExpenseListItem";
 import selectedExpenses from "../selectors/expenses";
 
 const ExpenseList = props => (
-  <div>
-    <h1>Expense List</h1>
+  <div className="">
+    <h3 className="">Expense List</h3>
+    <div className="">
+    {props.expenses.length === 0 && <p className="alert alert-warning">No expenses found.</p>}
     {props.expenses.map(expense => {
       return <ExpenseListItem key={expense.id} {...expense} />;
     })}
+    </div>
   </div>
 );
 
